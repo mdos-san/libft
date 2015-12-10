@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 12:59:09 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/01 11:16:31 by mdos-san         ###   ########.fr        #
+#    Updated: 2015/12/10 18:35:01 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME=		libft.a
 
 COMPILER=	gcc
 FLAGS=		-Wall -Wextra -Werror -c
+INCLUDES=	-I ./includes
 
 SRC_C=		ft_memset.c		ft_bzero.c		ft_memcpy.c\
 			ft_memccpy.c	ft_memmove.c	ft_memchr.c\
@@ -35,6 +36,7 @@ SRC_C=		ft_memset.c		ft_bzero.c		ft_memcpy.c\
 			ft_itoa.c		ft_lstnew.c		ft_lstdelone.c\
 			ft_lstdel.c		ft_lstadd.c		ft_lstiter.c\
 			ft_lstmap.c		ft_lstnew_cpy.c
+
 SRC_O=$(SRC_C:.c=.o)
 
 all: $(NAME)
@@ -44,7 +46,7 @@ $(NAME): $(SRC_O)
 	ranlib $(NAME)
 
 %.o: %.c
-	$(COMPILER) $(FLAGS) $< 
+	$(COMPILER) $(FLAGS) $(INCLUDES) $< 
 
 clean: 
 	rm -rf $(SRC_O)
