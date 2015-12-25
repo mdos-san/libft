@@ -44,6 +44,7 @@ all: $(NAME)
 $(NAME): $(SRC_O)
 	ar rc $(NAME) $(SRC_O)
 	ranlib $(NAME)
+	@echo "LIBFT CREATED"
 
 %.o: %.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) $< 
