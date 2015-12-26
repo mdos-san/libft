@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=		libft.a
+NAME =		libft.a
 
 COMPILER=	gcc
 FLAGS=		-Wall -Wextra -Werror -c
