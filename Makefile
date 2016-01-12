@@ -6,7 +6,7 @@
 #    By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 12:59:09 by mdos-san          #+#    #+#              #
-#    Updated: 2015/12/14 15:51:36 by mdos-san         ###   ########.fr        #
+#    Updated: 2016/01/12 05:22:25 by mdos-san         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,9 @@ SRC_O=$(SRC_C:.c=.o)
 all: $(NAME)
 
 $(NAME): $(SRC_O)
-	ar rc $(NAME) $(SRC_O)
-	ranlib $(NAME)
-	@echo "LIBFT CREATED"
+	@echo "Making libft.a"
+	@ar rc $(NAME) $(SRC_O)
+	@ranlib $(NAME)
 
 %.o: %.c
 	$(COMPILER) $(FLAGS) $(INCLUDES) $< 
