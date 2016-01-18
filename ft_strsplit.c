@@ -35,17 +35,19 @@ static int	check_nb_word(char const *s, char c)
 	return (nb_word);
 }
 
-static void	alloc_str(char ***tab_str, char const *s, int *i, int *i2)
+static int	alloc_str(char ***tab_str, char const *s, int *i, int *i2)
 {
 	if (*i2 > 0)
 	{
-		**tab_str = (char*)malloc(*i2 + 1);
+		if (!(**tab_str = (char*)malloc(*i2 + 1)))
+			return (0);
 		ft_strncpy(**tab_str, (s + *i), *i2);
 		*(**tab_str + *i2) = 0;
 		*tab_str = *tab_str + 1;
 		*i = *i + *i2 - 1;
 		*i2 = 0;
 	}
+	return (1);
 }
 
 char		**ft_strsplit(char const *s, char c)
@@ -70,7 +72,8 @@ char		**ft_strsplit(char const *s, char c)
 		{
 			while (s[i + i2] != c && s[i + i2])
 				i2++;
-			alloc_str(&tab_str, s, &i, &i2);
+			if (alloc_str(&tab_str, s, &i, &i2) == 0)
+				return (NULL);
 		}
 		i++;
 	}

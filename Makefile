@@ -35,24 +35,31 @@ SRC_C=		ft_memset.c		ft_bzero.c		ft_memcpy.c\
 			ft_strsplit.c	ft_putnbr.c		ft_putnbr_fd.c\
 			ft_itoa.c		ft_lstnew.c		ft_lstdelone.c\
 			ft_lstdel.c		ft_lstadd.c		ft_lstiter.c\
-			ft_lstmap.c		ft_lstnew_cpy.c	get_next_line.c
+			ft_lstmap.c		ft_lstnew_cpy.c	get_next_line.c\
+			ft_putnbrl.c
 
 SRC_O=$(SRC_C:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(SRC_O)
-	ar rc $(NAME) $(SRC_O)
-	ranlib $(NAME)
-	@echo "LIBFT CREATED"
+	@echo "Creating libft.a..."
+	@ar rc $(NAME) $(SRC_O)
+	@ranlib $(NAME)
+	@echo "Done !"
 
 %.o: %.c
-	$(COMPILER) $(FLAGS) $(INCLUDES) $< 
+	@echo "Compiling $<"
+	@$(COMPILER) $(FLAGS) $(INCLUDES) $<
 
 clean: 
-	rm -rf $(SRC_O)
+	@echo "Removing *.o"
+	@rm -rf $(SRC_O)
+	@echo "Done"
 
 fclean: clean
-	rm -rf $(NAME)
+	@echo "Removing libft.a"
+	@rm -rf $(NAME)
+	@echo "Done"
 
 re: fclean all

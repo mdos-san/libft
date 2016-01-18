@@ -36,7 +36,8 @@ char		*ft_strtrim(char const *s)
 		start++;
 	if (s[start] == 0)
 	{
-		result = (char*)malloc(1);
+		if(!(result = (char*)malloc(1)))
+			return (NULL);
 		result[0] = 0;
 		return (result);
 	}
@@ -44,7 +45,8 @@ char		*ft_strtrim(char const *s)
 		end--;
 	if (end == start)
 		return (NULL);
-	result = (char*)malloc(end - start + 2);
+	if (!(result = (char*)malloc(end - start + 2)))
+		return (NULL);
 	result[end - start + 1] = 0;
 	ft_strncpy(result, s + start, end - start + 1);
 	return (result);
