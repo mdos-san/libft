@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:52:57 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/01/12 05:25:44 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/01/23 10:15:50 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <string.h>
 # include "get_next_line.h"
+# define BUFF_SIZE 1024
 
 typedef struct		s_list
 {
