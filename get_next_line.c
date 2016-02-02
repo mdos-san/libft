@@ -14,7 +14,7 @@
 #include <sys/types.h>
 #include <sys/uio.h>
 #include <unistd.h>
-#include "get_next_line.h"
+#include "libft.h"
 
 static char	*ft_strdupadd(const char *s1, const char *s2, int len)
 {
