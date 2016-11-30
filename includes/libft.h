@@ -6,7 +6,7 @@
 /*   By: mdos-san <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:52:57 by mdos-san          #+#    #+#             */
-/*   Updated: 2016/10/22 07:30:56 by mdos-san         ###   ########.fr       */
+/*   Updated: 2016/11/30 15:49:10 by mdos-san         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoin_del(char *s1, char *s2, int del);
 char				*ft_strtrim(char const *s);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
